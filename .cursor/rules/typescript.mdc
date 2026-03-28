@@ -1,0 +1,18 @@
+---
+description: TypeScript 작성 규칙 (확장자·타입·any)
+globs: "**/*.{ts,tsx}"
+alwaysApply: false
+---
+
+# TypeScript 규칙
+
+## 반드시 (DO)
+
+- 새 코드는 **`.ts` / `.tsx`**만 사용한다.
+- 공개 API·props·함수 인자·반환값에는 `interface` 또는 `type`으로 타입을 명시한다.
+- `any`는 **정말 불가피할 때만** 쓰고, 범위를 최소화한다(가능하면 `unknown` + 좁히기).
+
+## 하지 말 것 (DON'T)
+
+- 기본으로 **`.js` / `.jsx` 파일을 새로 추가하지 않는다.** (레거시만 예외.)
+- 타입을 생략하거나 `any`로 **무분별하게** 우회하지 않는다.

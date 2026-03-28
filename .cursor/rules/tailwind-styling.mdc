@@ -1,0 +1,18 @@
+---
+description: Tailwind CSS 스타일링 (유틸·공통화)
+globs: "**/*.{tsx,css}"
+alwaysApply: false
+---
+
+# 스타일 (Tailwind CSS) 규칙
+
+## 반드시 (DO)
+
+- UI 스타일은 **Tailwind 유틸리티 클래스**를 기본으로 한다.
+- 반복되는 디자인 토큰·간격·색은 **`tailwind.config`** 테마 확장이나 **컴포넌트 추출**으로 맞춘다.
+- `@apply`는 **드물게**만 사용하고, 넓은 범위의 `@apply` 블록으로 대체하지 않는다.
+
+## 하지 말 것 (DON'T)
+
+- 새 UI를 **`style={{ }}` 인라인**만으로 구성하지 않는다.
+- 이 프로젝트에 아직 없다면 **CSS Modules, styled-components 등**으로 새 스타일 시스템을 도입하지 않는다. (명시적 요청·이미 도입된 경우만 예외.)

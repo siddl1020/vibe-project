@@ -1,0 +1,18 @@
+---
+description: Supabase 연동·환경 변수·시크릿 경계
+globs: "**/*.{ts,tsx}"
+alwaysApply: false
+---
+
+# 데이터베이스·Supabase 규칙
+
+## 반드시 (DO)
+
+- Supabase URL·anon 키 등은 **환경 변수**로 관리한다. (예: `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`.)
+- **서비스 롤 키** 등 강한 권한 키는 **서버 컴포넌트, Route Handler(`route.ts`), Server Actions** 등 **서버에서만** 사용한다.
+- 클라이언트 번들에 올라가도 되는 값만 `NEXT_PUBLIC_` 접두어를 붙인다.
+
+## 하지 말 것 (DON'T)
+
+- **시크릿·서비스 롤 키**를 클라이언트 컴포넌트, `NEXT_PUBLIC_` 변수, 프론트에 노출되는 코드에 넣지 않는다.
+- 별도 요청 없이 Supabase를 **다른 DB/ORM 스택으로 교체**하는 방향으로 제안하지 않는다.

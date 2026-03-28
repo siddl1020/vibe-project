@@ -1,0 +1,18 @@
+---
+description: Next.js App Router 라우팅·페이지·API 라우트
+globs: "app/**/*.{ts,tsx}"
+alwaysApply: false
+---
+
+# Next.js App Router 규칙
+
+## 반드시 (DO)
+
+- 라우팅은 **`app/` 디렉터리**만 사용한다.
+- 페이지: `page.tsx`, 공통 레이아웃: `layout.tsx`, HTTP API: Route Handler **`route.ts`** (`GET`/`POST` 등 export).
+- 내비게이션은 `next/link`, 이미지는 `next/image`를 우선한다.
+- 메타 정보는 **Metadata API** (`metadata` 객체 또는 `generateMetadata`)를 사용한다.
+
+## 하지 말 것 (DON'T)
+
+- **`pages/`** 디렉터리와 Pages Router 패턴(`getServerSideProps`, `getStaticProps`만으로 구성된 페이지 등)으로 **새 기능**을 만들지 않는다.
