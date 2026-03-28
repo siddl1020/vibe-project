@@ -32,7 +32,7 @@ export default function DeleteButton({ entryId }: Props) {
   return (
     <div className="flex flex-col items-start gap-2">
       {error ? (
-        <p className="text-sm text-red-600" role="alert">
+        <p className="text-sm font-medium text-purple-800" role="alert">
           {error}
         </p>
       ) : null}
@@ -40,7 +40,7 @@ export default function DeleteButton({ entryId }: Props) {
         type="button"
         onClick={handleClick}
         disabled={pending}
-        className="rounded-lg border border-red-300 px-4 py-2 text-sm font-medium text-red-600 hover:bg-red-50 disabled:opacity-60"
+        className="rounded-xl border border-slate-200 bg-white px-5 py-2.5 text-sm font-semibold text-slate-600 shadow-sm transition-colors hover:border-slate-300 hover:bg-slate-50 disabled:opacity-60"
       >
         {pending ? "삭제 중…" : "삭제"}
       </button>

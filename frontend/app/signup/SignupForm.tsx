@@ -17,10 +17,10 @@ export default function SignupForm() {
   }, [state?.error]);
 
   return (
-    <form action={formAction} className="mt-8 space-y-5">
+    <form action={formAction} className="mt-9 space-y-5">
       {state?.error ? (
         <div
-          className="rounded-lg border border-red-200 bg-red-50 px-3 py-2 text-sm text-red-800"
+          className="rounded-xl border border-purple-100 bg-purple-50 px-4 py-3 text-sm leading-relaxed text-purple-950"
           role="alert"
         >
           {state.error}
@@ -30,7 +30,7 @@ export default function SignupForm() {
       <div>
         <label
           htmlFor="email"
-          className="block text-sm font-medium text-gray-700"
+          className="block text-xs font-semibold uppercase tracking-wider text-slate-400"
         >
           이메일
         </label>
@@ -40,16 +40,16 @@ export default function SignupForm() {
           type="email"
           required
           autoComplete="email"
-          placeholder="you@example.com"
+          placeholder="you@email.com"
           disabled={pending}
-          className="mt-1 block w-full rounded-lg border border-gray-300 px-3 py-2 text-sm shadow-sm placeholder:text-gray-400 focus:border-gray-500 focus:ring-1 focus:ring-gray-500 focus:outline-none disabled:bg-gray-100"
+          className="mt-2 block w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 focus:border-sky-300 focus:outline-none focus:ring-2 focus:ring-sky-100 disabled:bg-slate-50"
         />
       </div>
 
       <div>
         <label
           htmlFor="password"
-          className="block text-sm font-medium text-gray-700"
+          className="block text-xs font-semibold uppercase tracking-wider text-slate-400"
         >
           비밀번호
         </label>
@@ -62,23 +62,23 @@ export default function SignupForm() {
           autoComplete="new-password"
           placeholder="6자 이상"
           disabled={pending}
-          className="mt-1 block w-full rounded-lg border border-gray-300 px-3 py-2 text-sm shadow-sm placeholder:text-gray-400 focus:border-gray-500 focus:ring-1 focus:ring-gray-500 focus:outline-none disabled:bg-gray-100"
+          className="mt-2 block w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 focus:border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-100 disabled:bg-slate-50"
         />
       </div>
 
       <button
         type="submit"
         disabled={pending}
-        className="w-full rounded-lg bg-gray-900 px-4 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-gray-800 disabled:opacity-60"
+        className="w-full rounded-xl bg-purple-700 py-3.5 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-purple-800 disabled:opacity-60"
       >
         {pending ? "처리 중…" : "회원가입"}
       </button>
 
-      <p className="pt-2 text-center text-sm text-gray-500">
+      <p className="pt-1 text-center text-sm text-slate-500">
         이미 계정이 있으신가요?{" "}
         <Link
           href="/login"
-          className="font-medium text-gray-900 hover:underline"
+          className="font-semibold text-sky-700 underline decoration-sky-200 underline-offset-4 hover:text-sky-800"
         >
           로그인
         </Link>
